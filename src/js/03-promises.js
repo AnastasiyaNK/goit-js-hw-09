@@ -24,11 +24,11 @@ formEl.addEventListener("click", onClickBtn)
 function onClickBtn(e) {
   e.preventDefault();
 
-  let delayInput = delayEl.value;
-  let stepInput = stepEl.value;
-  let amountInput = amountEl.value;
+  let delayInput = Number(delayEl.value);
+  let stepInput = Number(stepEl.value);
+  let amountInput = Number(amountEl.value);
 
-  for (let i = 1; i < amountInput; i += 1){
+  for (let i = 1; i <= amountInput; i += 1){
     createPromise(i, delayInput)
     .then(({ position, delay }) => {
       Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
