@@ -11,12 +11,12 @@ function createPromise(position, delay) {
   return new Promise((res, rej) => {
     setTimeout(() => {
       if (shouldResolve) {
-        res({position, delay});
+        res({ position, delay });
       } else {
-        rej({position, delay});
+        rej({ position, delay });
       }
-    })
-  }, delay);
+    }, delay);
+  });
 }
 
 formEl.addEventListener("click", onClickBtn)
